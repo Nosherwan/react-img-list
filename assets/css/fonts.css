@@ -1,0 +1,44 @@
+@font-face {
+	font-family: 'sofia_pro_lightregular';
+	src: url('https://simplywall.st/fonts/SofiaProLight-webfont.eot');
+	src: url('https://simplywall.st/fonts/SofiaProLight-webfont.eot?#iefix') format('embedded-opentype'),
+		 url('https://simplywall.st/fonts/SofiaProLight-webfont.woff') format('woff'),
+		 url('https://simplywall.st/fonts/SofiaProLight-webfont.ttf') format('truetype'),
+		 url('https://simplywall.st/fonts/SofiaProLight-webfont.svg#sofia_pro_lightregular') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'sofia_pro_light_condensedRg';
+	src: url('https://simplywall.st/fonts/SofiaProLiCond-webfont.eot');
+	src: url('https://simplywall.st/fonts/SofiaProLiCond-webfont.eot?#iefix') format('embedded-opentype'),
+		 url('https://simplywall.st/fonts/SofiaProLiCond-webfont.woff') format('woff'),
+		 url('https://simplywall.st/fonts/SofiaProLiCond-webfont.ttf') format('truetype'),
+		 url('https://simplywall.st/fonts/SofiaProLiCond-webfont.svg#sofia_pro_light_condensedRg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+/* Regular */
+@font-face {
+	font-family: 'League Gothic';
+	src: url('https://simplywall.st/fonts/leaguegothic-regular-webfont.eot');
+	src: url('https://simplywall.st/fonts/leaguegothic-regular-webfont.eot?#iefix') format('embedded-opentype'),
+		 url('https://simplywall.st/fonts/leaguegothic-regular-webfont.woff') format('woff'),
+		 url('https://simplywall.st/fonts/leaguegothic-regular-webfont.ttf') format('truetype'),
+		 url('https://simplywall.st/fonts/leaguegothic-regular-webfont.svg#league_gothicregular') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'CodeProDemoRegular';
+	src: url('https://simplywall.st/fonts/Code_Pro_Light_Demo-webfont.eot');
+	src: url('https://simplywall.st/fonts/Code_Pro_Light_Demo-webfont.eot?#iefix') format('embedded-opentype'),
+		 url('https://simplywall.st/fonts/Code_Pro_Light_Demo-webfont.woff') format('woff'),
+		 url('https://simplywall.st/fonts/Code_Pro_Light_Demo-webfont.ttf') format('truetype'),
+		 url('https://simplywall.st/fonts/Code_Pro_Light_Demo-webfont.svg#CodeProLightDemoRegular') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
