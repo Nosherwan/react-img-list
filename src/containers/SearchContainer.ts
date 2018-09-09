@@ -3,16 +3,16 @@ import { connect } from 'react-redux';
 import { Search } from '../components/Search';
 import {
 	getSymbolList,
-	search
+	doSearch
 } from '../actions/search';
 
 const makeMapStateToProps = () => {
 
 	const mapStateToProps = (state: any) => {
-		const { company } = state;
+		const { search } = state;
 		
 		return {
-			company
+			search
 		};
 	};
 
@@ -20,7 +20,7 @@ const makeMapStateToProps = () => {
 };
 
 const mapDispatchToProps = {
-	search,
+	doSearch,
 	getSymbolList
 };
 

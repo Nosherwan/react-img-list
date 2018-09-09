@@ -1,29 +1,29 @@
 import { ActionTypes } from '../constants';
 import Api from '../api'
 
-function fetchSymbolList () {
+function fetchSymbolList() {
   return Api.getJSON('ref-data/symbols', { authorization: false })
 }
 
-function getSearchResults (symbol: string) {
+function getSearchResults(symbol: string) {
   return Api.getJSON(`?${symbol}`, { authorization: false })
 }
 
-function search({ term }: {term: string}) {
+function doSearch({ term }: { term: string }) {
   return {
     type: ActionTypes.COMPANY_SEARCH,
-    payLoad: getSearchResults(term)
+    payload: getSearchResults(term)
   };
 }
 
 function getSymbolList() {
-  return {
-    type: ActionTypes.COMPANY_SEARCH,
-    payLoad: fetchSymbolList()
-  };
+    return {
+      type: ActionTypes.COMPANY_SEARCH,
+      payload: fetchSymbolList()
+    };
 }
 
 export {
-  search,
+  doSearch,
   getSymbolList
 }

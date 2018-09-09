@@ -4,6 +4,7 @@ import { ConnectedRouter } from 'react-router-redux';
 import { history } from '../navigation/history';
 import { configureStore } from '../store/configureStore';
 import Routes from '../navigation/routes';
+import { Navbar } from '../components/Navbar';
 
 
 class AppContainer extends PureComponent {
@@ -20,9 +21,12 @@ class AppContainer extends PureComponent {
 		} = this;
 		return (
 			<Provider store={store}>
-						<ConnectedRouter history={history}>
-						<Routes />
-						</ConnectedRouter>
+				<ConnectedRouter history={history}>
+					<>
+						<Navbar key={0} />
+						<Routes key={1} />
+					</>
+				</ConnectedRouter>
 			</Provider>
 		);
 	}

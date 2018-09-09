@@ -2,9 +2,9 @@ import { ActionTypes } from '../constants';
 import { Map, fromJS } from 'immutable';
 
 
-// function _addCompanyToHoldings (state, payLoad) {
+// function _addCompanyToHoldings (state, payload) {
 // 	const holdings = state.getIn(['current', 'portfolio', 'holdings', 'data']);
-// 	const updatedHoldings = holdings.unshift(fromJS(payLoad.company.data));
+// 	const updatedHoldings = holdings.unshift(fromJS(payload.company.data));
 
 // 	return state.withMutations(state => {
 // 		state.set('loading', false);
@@ -13,9 +13,9 @@ import { Map, fromJS } from 'immutable';
 // 	});
 // }
 
-// function _removeCompanyFromHoldings (state, payLoad) {
+// function _removeCompanyFromHoldings (state, payload) {
 // 	const holdings = state.getIn(['current', 'portfolio', 'holdings', 'data']);
-// 	const companyIndex = holdings.findIndex(item => item.get('unique_symbol') === payLoad.uniqueSymbol);
+// 	const companyIndex = holdings.findIndex(item => item.get('unique_symbol') === payload.uniqueSymbol);
 // 	const updatedHoldings = holdings.delete(companyIndex);
 
 // 	return state.withMutations(state => {

@@ -1,31 +1,43 @@
 import React, { Component } from 'react';
 import { push } from 'react-router-redux';
+import { connect } from 'react-redux';
 
-  const buttons = [
-    { name: 'portfolio', path: '/portfolio' },
-    { name: 'search', path: '/search' },
-    { name: 'company', path: '/company' }
-  ];
+const buttons = [
+  { name: 'portfolio', path: '/' },
+  { name: 'search', path: '/search' },
+  { name: 'company', path: '/company' }
+];
 
-class Navbar extends Component {
+interface INavbar {
+  dispatch: any
+}
+
+class NavbarComponent extends Component<INavbar, any> {
 
   constructor(props: any) {
     super(props)
   }
 
-  componentWillMount() {
-  }
-
   render() {
+    const { dispatch } = this.props
+
     return (
       <div>
         {buttons.map((btn: any) =>
-          <button onClick={((e: any) =>
-            push(btn.path))}>{btn.name}
+          <button
+            key={btn.name}
+            onClick={((e: any) => {
+              dispatch(push(btn.path))
+            }
+            )}
+          >
+            {btn.name}
           </button>)}
       </div>
     );
   }
 }
+
+const Navbar = connect()(NavbarComponent)
 
 export { Navbar }

@@ -7,7 +7,7 @@ import { loadState, saveState } from './localStorage';
 import throttle from 'lodash.throttle';
 import promiseMiddleware from 'redux-promise-middleware';
 
-// The following TS definitions extend the Window interface to enable using
+// These TS definitions extend the Window interface to enable using
 // the custom property for Redux DevTools
 // tslint:disable-next-line
 interface Window {
@@ -27,9 +27,8 @@ declare const module: Module
  * @returns store: redux store object
  */
 export function configureStore(): Store<any> {
-	//TODO: Once authentication is done need to comment out local storage
 	const persistedState = loadState();
-	// Build the middleware for intercepting and dispatching navigation actions
+	// Build middleware for intercepting & dispatching navigation actions
 	const routMiddleware = routerMiddleware(history);
 	const middleware = [
 		routMiddleware,
@@ -62,7 +61,6 @@ export function configureStore(): Store<any> {
 		});
 	}
 
-	//TODO: after authentication
 	store.subscribe(throttle(() => {
 		saveState(store.getState());
 	}, 1000));
