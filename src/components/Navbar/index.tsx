@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { push } from 'react-router-redux';
 import { connect } from 'react-redux';
 
+const styles = require('./styles.css');
+
 const buttons = [
   { name: 'portfolio', path: '/' },
   { name: 'search', path: '/search' },
@@ -22,7 +24,7 @@ class NavbarComponent extends Component<INavbar, any> {
     const { dispatch } = this.props
 
     return (
-      <div>
+      <div className={styles.nav_container}>
         {buttons.map((btn: any) =>
           <button
             key={btn.name}

@@ -1,6 +1,7 @@
 import React, { Component, ChangeEvent } from 'react';
 import debounce from 'lodash.debounce';
 import { SearchList } from '../SearchList'
+const styles = require('./styles.css');
 
 interface ISearch {
 	search: any
@@ -22,7 +23,7 @@ class Search extends Component<ISearch, any> {
 	}
 
 	_search = (searchText: any) => {
-		console.log('-searchText-',searchText)
+		console.log('-searchText-', searchText)
 		const { doSearch } = this.props;
 		doSearch({ term: searchText.replace('/', '') });
 	};
@@ -30,18 +31,21 @@ class Search extends Component<ISearch, any> {
 	componentWillMount() {
 		const { search } = this.props;
 		const results = search.get('results')
-		if (!results || results.size === 0) {
-			this.props.getSymbolList()
+		if (!results.size) {
+			this.props.getSymbolList();
 		}
-
 	}
 
 	render() {
 
 		return (
-			<div>
-				<input type='text' onChange={this._typeHandler} ></input>
-				<SearchList list={this.props.search.get('subset').toJS()} />
+			<div className={styles.search_container}>
+				<input
+					className={styles.search_box}
+					type='text'
+					onChange={this._typeHandler} >
+				</input>
+				<SearchList list={this.props.search.get('subset')} />
 			</div>
 		);
 	}

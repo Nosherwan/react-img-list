@@ -1,0 +1,23 @@
+.list_container {
+  list-style: none;
+  display: flex;
+  flex-flow: column wrap;
+  justify-items: center;
+  justify-content: center;
+  align-content: space-between;
+  padding: 0px;
+}
+
+.list_container li {
+  width: 100%;
+  text-align: center;
+  margin: 0 auto;
+  height: 1.8em;
+}
+
+.list_container li a {
+  text-decoration: none;
+  border-bottom:solid 1px lightgray;
+  cursor: pointer;
+  height: 100%;
+}

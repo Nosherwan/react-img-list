@@ -1,0 +1,11 @@
+.search_box {
+  width: 60%;
+  margin: 0 auto;
+  font-size: 1.25em;
+}
+
+.search_container {
+  display: flex;
+  align-content: center;
+  flex-flow: column nowrap;
+}
