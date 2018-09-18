@@ -1,27 +1,20 @@
 import { connect } from 'react-redux';
-// import { goBack } from 'react-router-redux';
 import { Search } from '../components/Search';
 import {
-	getSymbolList,
-	doSearch
+	getPhotos
 } from '../actions/search';
 
-const makeMapStateToProps = () => {
+const mapStateToProps = (state: any) => {
+	const { search } = state;
 
-	const mapStateToProps = (state: any) => {
-		const { search } = state;
-		
-		return {
-			search
-		};
+	return {
+		count: search.get('count'),
+		list: search.get('results')
 	};
-
-	return mapStateToProps;
 };
 
 const mapDispatchToProps = {
-	doSearch,
-	getSymbolList
+	getPhotos
 };
 
-export default connect(makeMapStateToProps, mapDispatchToProps)(Search);
+export default connect(mapStateToProps, mapDispatchToProps)(Search);

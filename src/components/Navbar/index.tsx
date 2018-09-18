@@ -5,9 +5,7 @@ import { connect } from 'react-redux';
 const styles = require('./styles.css');
 
 const buttons = [
-  { name: 'portfolio', path: '/' },
-  { name: 'search', path: '/search' },
-  { name: 'company', path: '/company' }
+  { name: 'search', path: '/' },
 ];
 
 interface INavbar {

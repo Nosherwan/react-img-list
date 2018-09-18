@@ -1,39 +1,21 @@
 import { ActionTypes } from '../constants';
-import { Map, fromJS } from 'immutable';
+import { Map, List, fromJS } from 'immutable';
 
-function lookup(term: any, results: any) {
-	if (term === '') return fromJS([])
-
-	return results.filter((item: any) => {
-		let symbol = item.get('symbol')
-		return symbol.toLowerCase().indexOf(term) > -1
-	})
-}
+const FULFILLED = '_FULFILLED';
 
 export function search(state = Map({
-	show: false,
-	loading: false,
-	results: [],
-	subset: [],
-	selection: Map({})
+	count: 0,
+	results: List()
 }), action: any) {
+		let results: any;
 	switch (action.type) {
-		case ActionTypes.COMPANY_SEARCH:
+		case ActionTypes.PHOTO_FETCH + FULFILLED:
 			console.log('action', action)
-			const results = state.get('results');
-			const subset = lookup(action.payload, results);
-			return state.set('subset', subset);
-		case ActionTypes.SYMBOL_FETCH + '_FULFILLED':
+			results = state.get('results');
 			return state.withMutations(state => {
-				state.set('results', fromJS(action.payload));
+				state.set('count', action.payload.count);
+				state.set('results', results.concat(fromJS(action.payload.results)));
 			});
-		case ActionTypes.COMPANY_SEARCH:
-			return state.withMutations(state => {
-				state.set('loading', false);
-				state.set('results', fromJS([]));
-			});
-		case ActionTypes.COMPANY_SEARCH:
-			return state.set('selection', Map({}));
 		default:
 			return state;
 	}

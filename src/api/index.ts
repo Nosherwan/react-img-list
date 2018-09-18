@@ -2,7 +2,7 @@
 function Api () {
 
 	// The value for globalUri should be set before using fetch
-	var _globalUri = 'https://api.iextrading.com/1.0/';
+	var _globalUri = 'http://jsonplaceholder.typicode.com/';
 	var _refreshCallbacks: any[] = [];
 	var _refreshInProgress = false;
 	var _accessToken = '';
@@ -46,7 +46,7 @@ function Api () {
 		var params: { [key: string]: any } = {
 			method: '',
 			headers: {
-				'Accept': 'application/vnd.simplywallst.v2',
+				// 'Accept': '',
 			}
 		};
 
@@ -60,10 +60,11 @@ function Api () {
 		}
 
 		switch (options.method) {
+			case 'patch':
 			case 'post':
 			case 'put':
 			case 'delete':
-				params.method = options.method;
+				params.method = options.method.toUpperCase();
 				if (options.type !== 'json') {
 					params.headers['Content-Type'] = 'application/x-www-form-urlencoded';
 					params.body = _queryStringFromObject(null, options.data);
@@ -269,6 +270,26 @@ function Api () {
 				});
 		},
 
+		/**
+		 * send patch request of type JSON
+		 * 
+		 * @param {string} endPoint string
+		 * @param {object} options object
+		 * @return {Object} promise
+		 */
+		patchJSON: function (endPoint: any, options: any) {
+			options = _defaultOptions(endPoint, options);
+			options.type = 'json';
+			options.method = 'patch';
+			return _fetch(options)
+				.then(function (result) {
+					return (
+						_tokenExpired(result) ?
+							_tokenRefreshFlow(options)
+							: _filterResponse(result)
+					);
+				});
+		},
 		/**
 		 * send delete request of type JSON
 		 * 

@@ -1,29 +1,25 @@
 import { ActionTypes } from '../constants';
 import Api from '../api'
 
-function fetchSymbolList() {
-  return Api.getJSON('ref-data/symbols', { authorization: false })
+function fetchPhotos(count: number) {
+  const calls = [];
+  const newCount = count + 3;
+  for (let i: number = count + 1; i <= newCount; i++) {
+    calls.push(Api.getJSON(`photos/${i}`, { authorization: false }));
+  }
+  return Promise.all(calls).then((res: any) => {
+    console.log('_response_', res);
+    return { count: newCount, results: res };
+  });
 }
 
-// function getSearchResults(symbol: string) {
-//   return Api.getJSON(`?${symbol}`, { authorization: false })
-// }
-
-function doSearch({ term }: { term: string }) {
+function getPhotos(count: number) {
   return {
-    type: ActionTypes.COMPANY_SEARCH,
-    payload: term
+    type: ActionTypes.PHOTO_FETCH,
+    payload: fetchPhotos(count)
   };
 }
 
-function getSymbolList() {
-    return {
-      type: ActionTypes.SYMBOL_FETCH,
-      payload: fetchSymbolList()
-    };
-}
-
 export {
-  doSearch,
-  getSymbolList
+  getPhotos
 }
