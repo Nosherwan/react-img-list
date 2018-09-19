@@ -185,12 +185,10 @@ function Api () {
 		},
 
 		setAccessToken: function (token: any) {
-			console.log('accessTokenSet:', token);
 			_accessToken = token;
 		},
 
 		setRefreshToken: function (token: any) {
-			console.log('refreshTokenSet:', token);
 			_refreshToken = token;
 		},
 

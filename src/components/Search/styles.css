@@ -5,7 +5,10 @@
 }
 
 .search_container {
-  /* border: 2px solid lightblue; */
   display: flex;
   flex-flow: column nowrap;
+}
+
+.search_container > button {
+  align-self: center;
 }

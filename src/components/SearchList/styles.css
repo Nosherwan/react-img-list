@@ -1,5 +1,4 @@
 .list_container {
-  /* border: 2px solid lightgreen; */
   list-style: none;
   display: flex;
   flex-flow: row wrap;
@@ -9,14 +8,12 @@
 }
 
 .list_container li {
-  border: 2px solid gold;
   display: flex;
   margin: 0 auto;
   overflow: hidden;
 }
 
 .list_container > li > div {
-  border-bottom:solid 1px green;
   height:300px;
   margin-bottom: 20px;
   overflow: hidden;
@@ -31,17 +28,9 @@
   transition: all .5s ease-in-out;
 }
 
-.list_container > li > div > label {
-  background: red;
-  width: 300px;
-  transition: all .5s ease-in-out;
-}
-
 .list_container > li > div > :nth-child(3) {
   height: 50px;
   width: 300px;
-  background: blue;
-  border-bottom:solid 1px lightcoral;
   white-space: nowrap;
 }
 
@@ -53,17 +42,18 @@
 .list_container > li > div > :nth-child(2) {
   height: 24px;
   margin-top: -20px;
-  background: white;
+  background: rgb(245,247,250);
   transition: all .5s ease-in-out;
   transform: rotate(-1.2deg);
   transform-origin: top right;
+  border: 2px solid rgb(245,247,250);
 }
 
 .list_container > li > div > :nth-child(2):after {
   content: "^";
   float: right;
   font-size: 1.5em;
-  color: white;
+  color: rgb(245,247,250);
   margin-top: -24px;
   transition: all .5s ease-in-out;
   animation: pulse 2.5s infinite;
@@ -71,13 +61,13 @@
 
 @keyframes pulse {
   0% {
-    color: white;
+    color: rgb(245,247,250);
   }
   50% {
     color: rgba(0,0,0,0);
   }
   100% {
-    color: white;
+    color: rgb(245,247,250) 
   }
 }
 

@@ -1,5 +1,5 @@
 {
-  "name": "stock-manager",
+  "name": "practical-task",
   "version": "1.0.0",
   "main": "src/index.js",
   "scripts": {
@@ -83,7 +83,7 @@
     "write-file-webpack-plugin": "^4.0.2"
   },
   "keywords": [],
-  "author": "none specified",
+  "author": "Nosh Ghazanfar",
   "license": "none specified",
   "private": true
 }

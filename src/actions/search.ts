@@ -8,7 +8,6 @@ function fetchPhotos(count: number) {
     calls.push(Api.getJSON(`photos/${i}`, { authorization: false }));
   }
   return Promise.all(calls).then((res: any) => {
-    console.log('_response_', res);
     return { count: newCount, results: res };
   });
 }

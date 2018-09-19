@@ -9,10 +9,8 @@
 }
 
 .nav_container button {
-  color: orangered;
   font-size: 1em;
   font-weight: bold;
-  border:solid 2px orange; 
   border-radius: .25em; 
   width: 100%;
   height: 1.5em;

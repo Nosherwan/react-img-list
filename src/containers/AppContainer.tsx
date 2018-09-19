@@ -4,7 +4,6 @@ import { ConnectedRouter } from 'react-router-redux';
 import { history } from '../navigation/history';
 import { configureStore } from '../store/configureStore';
 import Routes from '../navigation/routes';
-import { Navbar } from '../components/Navbar';
 import { Overlay } from '../components/Overlay';
 
 

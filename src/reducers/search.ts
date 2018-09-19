@@ -13,7 +13,6 @@ export function search(state = Map({
 		case ActionTypes.SET_SELECTED_PHOTO:
 			return state.set('selected', action.payload.selected)
 		case ActionTypes.PHOTO_FETCH + FULFILLED:
-			console.log('action', action)
 			results = state.get('results');
 			return state.withMutations(state => {
 				state.set('count', action.payload.count);
