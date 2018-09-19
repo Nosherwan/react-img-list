@@ -36,7 +36,7 @@ class Search extends Component<ISearch, any> {
 					<SearchList list={list}
 						setPhoto={setPhoto}
 						showOverlay={showOverlay} />
-				<button onClick={this.getMorePhotos}>Load More...</button>
+					<button onClick={this.getMorePhotos}>Load More...</button>
 				</div>
 			</div>
 		);

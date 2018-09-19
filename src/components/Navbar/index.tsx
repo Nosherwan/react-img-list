@@ -8,6 +8,8 @@ const buttons = [
   { name: 'search', path: '/' },
 ];
 
+/* NOTE: This component is not used */
+
 interface INavbar {
   dispatch: any
 }

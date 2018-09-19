@@ -1,3 +1,4 @@
+/* NOTE: This is my own wrapper code around fetch API */
 
 function Api () {
 
