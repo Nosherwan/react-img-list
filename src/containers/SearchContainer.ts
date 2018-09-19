@@ -1,8 +1,12 @@
 import { connect } from 'react-redux';
 import { Search } from '../components/Search';
 import {
-	getPhotos
+	getPhotos,
+	setPhoto
 } from '../actions/search';
+import {
+	showOverlay
+} from '../actions/ui';
 
 const mapStateToProps = (state: any) => {
 	const { search } = state;
@@ -14,7 +18,9 @@ const mapStateToProps = (state: any) => {
 };
 
 const mapDispatchToProps = {
-	getPhotos
+	showOverlay,
+	getPhotos,
+	setPhoto
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Search);

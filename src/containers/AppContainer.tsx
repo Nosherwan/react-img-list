@@ -5,6 +5,7 @@ import { history } from '../navigation/history';
 import { configureStore } from '../store/configureStore';
 import Routes from '../navigation/routes';
 import { Navbar } from '../components/Navbar';
+import { Overlay } from '../components/Overlay';
 
 
 class AppContainer extends PureComponent {
@@ -23,7 +24,7 @@ class AppContainer extends PureComponent {
 			<Provider store={store}>
 				<ConnectedRouter history={history}>
 					<>
-						<Navbar key={0} />
+						<Overlay key={0} />
 						<Routes key={1} />
 					</>
 				</ConnectedRouter>

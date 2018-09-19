@@ -3,6 +3,8 @@ import { SearchList } from '../SearchList'
 const styles = require('./styles.css');
 
 interface ISearch {
+	showOverlay: any
+	setPhoto: any
 	getPhotos: any
 	count: number
 	list: any
@@ -27,10 +29,13 @@ class Search extends Component<ISearch, any> {
 	}
 
 	render() {
+		const { setPhoto, showOverlay, list } = this.props;
 		return (
 			<div>
 				<div className={styles.search_container}>
-					<SearchList list={this.props.list} />
+					<SearchList list={list}
+						setPhoto={setPhoto}
+						showOverlay={showOverlay} />
 				</div>
 				<button onClick={this.getMorePhotos}>Load More...</button>
 			</div>

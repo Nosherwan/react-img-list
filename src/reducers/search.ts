@@ -5,10 +5,13 @@ const FULFILLED = '_FULFILLED';
 
 export function search(state = Map({
 	count: 0,
+	selected: Map({}),
 	results: List()
 }), action: any) {
-		let results: any;
+	let results: any;
 	switch (action.type) {
+		case ActionTypes.SET_SELECTED_PHOTO:
+			return state.set('selected', action.payload.selected)
 		case ActionTypes.PHOTO_FETCH + FULFILLED:
 			console.log('action', action)
 			results = state.get('results');

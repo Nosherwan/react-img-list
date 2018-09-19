@@ -20,6 +20,16 @@ function getPhotos(count: number) {
   };
 }
 
+function setPhoto(photo: any) {
+  return {
+    type: ActionTypes.SET_SELECTED_PHOTO,
+    payload: {
+      selected: photo
+    }
+  };
+}
+
 export {
-  getPhotos
+  getPhotos,
+  setPhoto
 }

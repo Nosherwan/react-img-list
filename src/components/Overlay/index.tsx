@@ -1,27 +1,53 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import {
+  showOverlay
+} from '../../actions/ui';
 
 const styles = require('./styles.css');
 
-interface INavbar {
-  dispatch: any
+interface IOverlay {
+  show: any
+  selected: any
+  showOverlay: any
 }
 
-class NavbarComponent extends Component<INavbar, any> {
+class OverlayComponent extends Component<IOverlay, any> {
 
   constructor(props: any) {
     super(props)
   }
 
   render() {
-
+    const { show, selected, showOverlay } = this.props;
     return (
-      <div className={styles.nav_container}>
+      <div
+        className={styles.overlay}
+        style={{ display: (show ? 'flex' : 'none') }}>
+        <div>
+          <img src={selected.get('url')} />
+          <button
+            onClick={() => showOverlay(false)}
+          >Close</button>
+        </div>
       </div>
     );
   }
 }
 
-const Navbar = connect()(NavbarComponent)
+const mapStateToProps = (state: any) => {
+  const { search, ui } = state;
 
-export { Navbar }
+  return {
+    selected: search.get('selected'),
+    show: ui.get('showOverlay')
+  };
+};
+
+const mapDispatchToProps = {
+  showOverlay
+};
+
+const Overlay = connect(mapStateToProps, mapDispatchToProps)(OverlayComponent)
+
+export { Overlay }

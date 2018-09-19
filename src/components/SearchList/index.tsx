@@ -1,7 +1,8 @@
 import React from 'react';
 const styles = require('./styles.css');
 
-const SearchList = ({ list }: { list: any }) => {
+const SearchList = ({ list, setPhoto, showOverlay }:
+  { list: any, setPhoto: any, showOverlay: any }) => {
   return (
     <ul className={styles.list_container}>
       {list.map((item: any) => {
@@ -12,9 +13,12 @@ const SearchList = ({ list }: { list: any }) => {
               <img src={item.get('url')} />
               <div></div>
               <div>
-                  {item.get('title')}
+                {item.get('title')}
               </div>
-              <button>View full size</button>
+              <button onClick={() => {
+                setPhoto(item)
+                showOverlay(true)
+              }}>View full size</button>
             </div>
           </li>
         );
