@@ -10,26 +10,15 @@
 
 .list_container li {
   border: 2px solid gold;
-  /* width: 100%; */
   display: flex;
-  /* text-align: center; */
   margin: 0 auto;
   overflow: hidden;
-  /* height: 1.8em; */
 }
 
 .list_container > li > div {
-  /* display:flex;
-  flex-flow: column nowrap;  */
-  /* height: 100%; */
-  /* width:300; */
-  /* text-decoration: none; */
   border-bottom:solid 1px green;
-  /* cursor: pointer; */
-  /* width: 300px; */
   height:300px;
   margin-bottom: 20px;
-  /* transition: all .5s ease-in-out; */
   overflow: hidden;
 }
 
@@ -62,12 +51,39 @@
 }
 
 .list_container > li > div > :nth-child(2) {
-  height: 22px;
+  height: 24px;
   margin-top: -20px;
   background: white;
   transition: all .5s ease-in-out;
   transform: rotate(-1.2deg);
   transform-origin: top right;
+}
+
+.list_container > li > div > :nth-child(2):after {
+  content: "^";
+  float: right;
+  font-size: 1.5em;
+  color: white;
+  margin-top: -24px;
+  transition: all .5s ease-in-out;
+  animation: pulse 2.5s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    color: white;
+  }
+  50% {
+    color: rgba(0,0,0,0);
+  }
+  100% {
+    color: white;
+  }
+}
+
+.list_container > li > div:hover > :nth-child(2):after {
+  transition: all .5s ease-in-out;
+  transform: rotate(180deg);
 }
 
 .list_container > li > div:hover > :nth-child(2) {
