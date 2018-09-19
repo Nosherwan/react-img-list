@@ -6,12 +6,18 @@ const SearchList = ({ list }: { list: any }) => {
     <ul className={styles.list_container}>
       {list.map((item: any) => {
         const id = item.get('id');
-        return (<li key={id}>
-          <a>
-            {item.get('title')}
-            {item.get('thumbnailUrl')}
-          </a>
-        </li>);
+        return (
+          <li key={id}>
+            <div>
+              <img src={item.get('url')} />
+              <div></div>
+              <div>
+                  {item.get('title')}
+              </div>
+              <button>View full size</button>
+            </div>
+          </li>
+        );
       })
       }
     </ul>

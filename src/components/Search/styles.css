@@ -5,7 +5,7 @@
 }
 
 .search_container {
+  /* border: 2px solid lightblue; */
   display: flex;
-  align-content: center;
   flex-flow: column nowrap;
 }

@@ -1,23 +1,76 @@
 .list_container {
+  /* border: 2px solid lightgreen; */
   list-style: none;
   display: flex;
-  flex-flow: column wrap;
-  justify-items: center;
-  justify-content: center;
-  align-content: space-between;
+  flex-flow: row wrap;
+  align-self: center;
   padding: 0px;
+  width: 1000px;
 }
 
 .list_container li {
-  width: 100%;
-  text-align: center;
+  border: 2px solid gold;
+  /* width: 100%; */
+  display: flex;
+  /* text-align: center; */
   margin: 0 auto;
-  height: 1.8em;
+  overflow: hidden;
+  /* height: 1.8em; */
 }
 
-.list_container li a {
-  text-decoration: none;
-  border-bottom:solid 1px lightgray;
-  cursor: pointer;
-  height: 100%;
+.list_container > li > div {
+  /* display:flex;
+  flex-flow: column nowrap;  */
+  /* height: 100%; */
+  /* width:300; */
+  /* text-decoration: none; */
+  border-bottom:solid 1px green;
+  /* cursor: pointer; */
+  /* width: 300px; */
+  height:300px;
+  margin-bottom: 20px;
+  /* transition: all .5s ease-in-out; */
+  overflow: hidden;
+}
+
+.list_container > li > div:hover > * {
+  transform: translateY(-150px)
+}
+
+
+.list_container > li > div > * {
+  transition: all .5s ease-in-out;
+}
+
+.list_container > li > div > label {
+  background: red;
+  width: 300px;
+  transition: all .5s ease-in-out;
+}
+
+.list_container > li > div > :nth-child(3) {
+  height: 50px;
+  width: 300px;
+  background: blue;
+  border-bottom:solid 1px lightcoral;
+  white-space: nowrap;
+}
+
+.list_container > li > div > img {
+  height: 300px;
+  transition: all .5s ease-in-out;
+}
+
+.list_container > li > div > :nth-child(2) {
+  height: 22px;
+  margin-top: -20px;
+  background: white;
+  transition: all .5s ease-in-out;
+  transform: rotate(-1.2deg);
+  transform-origin: top right;
+}
+
+.list_container > li > div:hover > :nth-child(2) {
+  transform: translateY(-150px) rotate(1.2deg);
+  transform-origin: top right;
 }
